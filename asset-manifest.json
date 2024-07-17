@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Samer-Hamdy/static/css/main.61b5058a.css",
+    "main.js": "/Samer-Hamdy/static/js/main.8af5dae6.js",
+    "static/js/453.e1a4b6e9.chunk.js": "/Samer-Hamdy/static/js/453.e1a4b6e9.chunk.js",
+    "static/media/work.jpg": "/Samer-Hamdy/static/media/work.2094d4b67921d030ebde.jpg",
+    "static/media/services.jpg": "/Samer-Hamdy/static/media/services.c32b2ce9a0e6713ff568.jpg",
+    "static/media/samer.jpg": "/Samer-Hamdy/static/media/samer.63ba75f986115ac2983a.jpg",
+    "static/media/Samer2.jpg": "/Samer-Hamdy/static/media/Samer2.7e418bc4b4900654b809.jpg",
+    "static/media/digital market.jpg": "/Samer-Hamdy/static/media/digital market.e1c71c3e1a07004b6ba6.jpg",
+    "static/media/samer logo.png": "/Samer-Hamdy/static/media/samer logo.9d44924c20b2fb83178b.png",
+    "index.html": "/Samer-Hamdy/index.html",
+    "main.61b5058a.css.map": "/Samer-Hamdy/static/css/main.61b5058a.css.map",
+    "main.8af5dae6.js.map": "/Samer-Hamdy/static/js/main.8af5dae6.js.map",
+    "453.e1a4b6e9.chunk.js.map": "/Samer-Hamdy/static/js/453.e1a4b6e9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61b5058a.css",
+    "static/js/main.8af5dae6.js"
+  ]
+}
