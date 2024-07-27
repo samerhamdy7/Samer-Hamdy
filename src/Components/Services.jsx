@@ -41,7 +41,7 @@ const services = [
 ]
 export default function Services() {
   return (
-    <div id='services' className='section mt-96 overflow-hidden'>
+    <div id='services' className='section mt-96 overflow-hidden p-2'>
       <div className='continer mx-auto'>
         <div className='flex flex-col lg:flex-row gap-8'>
 
@@ -76,7 +76,7 @@ export default function Services() {
 
               const { name, Description, link } = services;
               return (
-                <div className='border-b border-white/20 h-[180px]  flex' key={index}>
+                <div className=' p-2 border-b border-white/20 h-[180px]  flex' key={index}>
                   <div className='max-w-[476px] mt-12 '>
                     <h4 className='text-[19px] tracking-wider font-primary font-semibold mb-6'>{name}</h4>
                     <p className='leading-tight font-tertiary'>{Description}</p>

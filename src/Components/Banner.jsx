@@ -12,7 +12,7 @@ import logo from "../imgs/samer logo/Samer2.jpg"
 
 export default function Banner() {
   return (
-    <section id='home' className='min-h-[85vh] lg:min-h-[78vh] flex items-center over'>
+    <section id='home' className='min-h-[85vh] lg:min-h-[78vh] flex items-center over p-2'>
       <div className="container ms-auto">
         <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
           {/*text*/}

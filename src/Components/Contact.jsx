@@ -8,7 +8,7 @@ import { fadeIn } from '../variants'
 
 export default function Contact() {
   return (
-    <section id='contact' className='py-16 lg:section mt-96'>
+    <section id='contact' className='py-16 lg:section mt-96 p-2'>
       <div className='container mx-auto overflow-hidden'>
         <div className='flex flex-col lg:flex-row'>
           {/* text */}

@@ -12,7 +12,7 @@ import logo2 from "../imgs/work/digital market.jpg"
 
 export default function Work() {
   return (
-    <section id='work' className='section '>
+    <section id='work' className='section p-2'>
       <div className="container mx-auto mt-96 overflow-hidden">
         <div className='flex flex-col lg:flex-row gap-x-10'>
           <motion.div 

@@ -22,7 +22,7 @@ export default function About() {
     threshold: 0.5
   });
   return (
-    <section id='about' className='section mt-10 overflow-hidden' ref={ref}>
+    <section id='about' className='section mt-10 overflow-hidden p-2' ref={ref} >
       <div className="container mx-auto">
         <div className='flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-x-20
          justify-center items-center '>
