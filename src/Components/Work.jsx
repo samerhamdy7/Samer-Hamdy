@@ -1,118 +1,93 @@
-import React from 'react'
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
+import workImage from "../imgs/work/work.jpg";
+import digitalImage from "../imgs/work/digital market.jpg";
 
-//motion//
-import { motion } from 'framer-motion'
+const Work = () => {
+  const projects = [
+    {
+      title: "SaaS Legal Management System",
+      image: workImage,
+      description:
+        "A legal-tech platform with law firm portals, admin dashboards, multi-tenant billing, and document workflows.",
+      liveLink: "https://lawyer.adalatech.online",
+    },
+    {
+      title: "Automotive Marketplace Platform",
+      image: digitalImage,
+      description:
+        "A German vehicle marketplace with dynamic listings, admin review flows, secure image uploads, and SEO-first design.",
+      liveLink: "https://autokaufendirekt.de",
+    },
+    {
+      title: "AI Automotive Diagnostic Platform",
+      image: workImage,
+      description:
+        "A credit-based SaaS diagnostic tool using Python and LangChain to power AI-driven vehicle maintenance advice.",
+      liveLink: "#contact",
+      buttonLabel: "Request Case Study",
+    },
+  ];
 
-//variens//
-import { fadeIn } from '../variants'
-
-//imgs//
-import logo from "../imgs/work/work.jpg"
-import logo2 from "../imgs/work/digital market.jpg"
-
-export default function Work() {
   return (
-    <section id='work' className='section p-2'>
-      <div className="container mx-auto mt-96 overflow-hidden">
-        <div className='flex flex-col lg:flex-row gap-x-10'>
-          <motion.div 
-          variants={fadeIn("right", 0.5)}
+    <section id="work" className="py-24 bg-slate-950">
+      <div className="container mx-auto px-4">
+        <motion.div
+          variants={fadeIn("up", "spring", 0.2, 1)}
           initial="hidden"
-          whileInView={"show"}
-          viewport={{once: false, amount:0.3}}
-          className='flex-1 flex flex-col gap-y-10 mb-10 lg:mb-0 '>
-            {/*text*/}
-            <div
-            variants={fadeIn("right", 0.5)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{once: false, amount:0.3}}>
-              <h2 className='h2 leading-tight text-accent'>
-                My Latest <br />
-                Work
-              </h2>
-              <p className='max-w-sm mb-16'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores debitis reiciendis soluta impedit voluptatum sint sunt eaque eveniet nihil laborum.</p>
-              <button className='btn btn-sm'>View All Products</button>
-            </div>
+          whileInView="show"
+          className="mb-12 text-center"
+        >
+          <p className="text-sm uppercase tracking-[0.35em] text-sky-400">
+            Featured Work
+          </p>
+          <h2 className="mt-4 text-4xl font-bold text-white md:text-5xl">
+            Live project showcases.
+          </h2>
+        </motion.div>
 
-            <div
-            className='group relative overflow-hidden border-2 border-white/50 rounded-xl'>
-            {/*Image*/}
-              {/*overlay*/}
-              <div className='group-hover:bg-black/70 w-full h-full absolute z-40
-              transtion-all duration-300'></div>
-
-              {/*img*/}
-              <img className='group-hover:scale-125 trantion-all duration-500 w-full' src={logo} />
-
-              {/*pretitle*/}
-              <div className='absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50'>
-                <span className='text-gradient'>UI/UX Design</span>
+        <div className="grid gap-8 md:grid-cols-3">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={fadeIn("up", "spring", 0.3 + index * 0.15, 1)}
+              initial="hidden"
+              whileInView="show"
+              className="group relative overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-slate-950/40"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/30 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+              <div className="absolute inset-x-0 bottom-0 px-6 pb-8 text-white opacity-0 transition duration-500 group-hover:opacity-100">
+                <h3 className="mb-3 text-2xl font-semibold">{project.title}</h3>
+                <p className="mb-5 text-sm text-slate-300">
+                  {project.description}
+                </p>
+                <a
+                  href={project.liveLink}
+                  target={
+                    project.liveLink.startsWith("http") ? "_blank" : undefined
+                  }
+                  rel={
+                    project.liveLink.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className="inline-flex rounded-full bg-blue-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-400"
+                >
+                  {project.buttonLabel || "View Live"}
+                </a>
               </div>
-
-              {/*title*/}
-              <div className='absolute -bottom-full left-12 group-hover:bottom-14 transtion-all duration-700 z-50'>
-                <span className='text-3xl text-white'>Project Title</span>
-
-              </div>
-
-
-            </div>
-          </motion.div>
-          
-          <motion.div
-          variants={fadeIn("left", 0.5)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{once: false, amount:0.3}}
-          className='flex-1 flex flex-col gap-y-10'>
-             {/*Image*/}
-             <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl'>
-              {/*overlay*/}
-              <div className='group-hover:bg-black/70 w-full h-full absolute z-40
-              transtion-all duration-300'></div>
-
-              {/*img*/}
-              <img className='group-hover:scale-125 trantion-all duration-500 rounded-xl w-full' src={logo2} />
-
-              {/*pretitle*/}
-              <div className='absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50'>
-                <span className='text-gradient'>UI/UX Design</span>
-              </div>
-
-              {/*title*/}
-              <div className='absolute -bottom-full left-12 group-hover:bottom-14 transtion-all duration-700 z-50'>
-                <span className='text-3xl text-white'>Project Title</span>
-
-              </div>
-
-
-            </div>
-             {/*Image*/}
-             <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl'>
-              {/*overlay*/}
-              <div className='group-hover:bg-black/70 w-full h-full absolute z-40
-              transtion-all duration-300'></div>
-
-              {/*img*/}
-              <img className='group-hover:scale-125 trantion-all duration-500 w-full ' src={logo} />
-
-              {/*pretitle*/}
-              <div className='absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50'>
-                <span className='text-gradient'>UI/UX Design</span>
-              </div>
-
-              {/*title*/}
-              <div className='absolute -bottom-full left-12 group-hover:bottom-14 transtion-all duration-700 z-50'>
-                <span className='text-3xl text-white'>Project Title</span>
-
-              </div>
-
-
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default Work;

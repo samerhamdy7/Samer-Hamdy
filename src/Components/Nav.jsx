@@ -1,67 +1,36 @@
-import React from 'react'
+import { motion } from "framer-motion";
+import { Link } from "react-scroll";
+import { fadeIn } from "../variants";
 
-
-//import Link //
-import { Link } from 'react-scroll'
-
-//import Icons//
-import { BiHomeAlt, BiUser } from 'react-icons/bi'
-import { BsClipboardData, BsBriefcase, BsChatSquareText } from 'react-icons/bs'
-
-export default function Nav() {
+const Nav = () => {
   return (
-    <nav className='fixed bottom-2 lg:bottom-8 w-full overflow-hidden z-40 '>
-      <div className='container mx-auto'>
-
-        <div className='w-full bg-black/20 h-[90px] backdrop-blur-2xl rounded-full max-w-[400px] mx-auto px-5 flex justify-between items-center text-2xl text-white/50'>
+    <motion.nav
+      variants={fadeIn("up", "spring", 0.2, 1)}
+      initial="hidden"
+      animate="show"
+      className="fixed bottom-0 left-0 w-full z-40 bg-slate-950/80 backdrop-blur-2xl border-t border-slate-700/30"
+    >
+      <div className="container mx-auto px-4 py-4 flex justify-center gap-6 text-sm font-medium text-white">
+        {[
+          { label: "Home", to: "banner" },
+          { label: "About", to: "about" },
+          { label: "Services", to: "services" },
+          { label: "Work", to: "work" },
+          { label: "Contact", to: "contact" },
+        ].map((item) => (
           <Link
-          activeClass='active'
-          smooth={true}
-          spy={true}
-           to='home' 
-           className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
-            <BiHomeAlt />
+            key={item.to}
+            to={item.to}
+            smooth={true}
+            duration={500}
+            className="rounded-full px-4 py-2 transition text-white hover:text-sky-300"
+          >
+            {item.label}
           </Link>
-
-          <Link
-          activeClass='active'
-          smooth={true}
-          spy={true}
-           to='about'
-            className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
-            <BiUser />
-          </Link>
-
-          <Link
-          activeClass='active'
-          smooth={true}
-          spy={true}
-           to='services'
-           className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
-            <BsClipboardData />
-          </Link>
-
-          <Link
-          activeClass='active'
-          smooth={true}
-          spy={true}
-           to='work'
-            className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
-            <BsBriefcase />
-          </Link>
-
-          <Link
-          activeClass='active'
-          smooth={true}
-          spy={true}
-           to='contact'
-            className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
-            <BsChatSquareText />
-          </Link>
-         
-        </div>
-
+        ))}
       </div>
-    </nav>
-  )
-}
+    </motion.nav>
+  );
+};
+
+export default Nav;

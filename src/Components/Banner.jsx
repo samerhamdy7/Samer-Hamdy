@@ -1,104 +1,102 @@
-import React from 'react'
+import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
-import { FaGithub, FaYoutube, FaDribbble } from "react-icons/fa"
-
-import { TypeAnimation } from 'react-type-animation'
-
-import { motion } from 'framer-motion'
-
-import { fadeIn } from "../variants"
-
-import logo from "../imgs/samer logo/Samer2.jpg"
-
-export default function Banner() {
+const Banner = () => {
   return (
-    <section id='home' className='min-h-[85vh] lg:min-h-[78vh] flex items-center over p-2'>
-      <div className="container ms-auto">
-        <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
-          {/*text*/}
-          <div className='flex-1 text-center font-secondary lg:text-left'>
+    <section
+      id="banner"
+      className="relative flex items-center justify-center min-h-screen overflow-hidden bg-slate-950"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.24),transparent_18%),radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.22),transparent_20%)]" />
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="mx-auto max-w-4xl rounded-[2rem] border border-white/10 bg-slate-900/70 p-10 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
+          <div className="space-y-6 text-center">
+            <motion.p
+              variants={fadeIn("up", "spring", 0.2, 1)}
+              initial="hidden"
+              animate="show"
+              className="inline-flex items-center justify-center rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm uppercase tracking-[0.35em] text-blue-200"
+            >
+              Full-Stack Web Developer
+            </motion.p>
             <motion.h1
-              variants={fadeIn("up", 0.3)}
+              variants={fadeIn("up", "spring", 0.3, 1)}
               initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className='text-[55px] font-bold leading-[0.8] lg:text-[100px]'>
-              Samer <span>Hamdy</span>
+              animate="show"
+              className="text-5xl font-black leading-[1.02] text-white sm:text-6xl md:text-7xl"
+            >
+              Samer Hamdy
             </motion.h1>
-
             <motion.div
-              variants={fadeIn("up", 0.4)}
+              variants={fadeIn("up", "spring", 0.4, 1)}
               initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className='mb-6 text-[36px] lg:text[60px] font-secondary font-semibold uppercase leading-[1]'>
-              <span className='mr-4 text-white'>I am a</span>
+              animate="show"
+              className="text-center text-2xl font-semibold text-sky-300"
+            >
               <TypeAnimation
                 sequence={[
-                  'WEB',
+                  "Laravel & Next.js Expert",
                   2000,
-                  'DEVELOPER',
+                  "SaaS, Legal-Tech & FinTech",
+                  2000,
+                  "AI-Enabled Diagnostic Platforms",
                   2000,
                 ]}
+                wrapper="span"
                 speed={50}
-                className='text-accent'
-                wrapper='span'
                 repeat={Infinity}
               />
             </motion.div>
-
             <motion.p
-              variants={fadeIn("up", 0.5)}
+              variants={fadeIn("up", "spring", 0.5, 1)}
               initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className='mb-8 max-w-lg lg:mx-0'>Lorem ipsum dolor,
-              sit amet consectetur adipisicing elit.
-              Possimus commodi accusamus impedit tempora libero repudiandae doloribus et laboriosam,
-              totam maiores.</motion.p>
-
+              animate="show"
+              className="mx-auto max-w-2xl text-lg text-slate-300"
+            >
+              I build scalable web applications for law firms, marketplaces, and
+              AI-driven services using clean architecture, secure APIs, and
+              polished interfaces.
+            </motion.p>
             <motion.div
-              variants={fadeIn("up", 0.6)}
+              variants={fadeIn("up", "spring", 0.6, 1)}
               initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className='flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0'>
-              <button className='btn btn-lg'>Contact me</button>
-              <a href="#" className='text-gradient btn-link'>My Portofolio</a>
-            </motion.div>
-
-            {/*social*/}
-            <motion.div
-              variants={fadeIn("up", 0.7)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className='flex text-[20px] gap-x-6 max-w-max mx-auto'>
-              <a href="#">
-                <FaYoutube />
+              animate="show"
+              className="flex flex-col gap-4 sm:flex-row items-center justify-center"
+            >
+              <a
+                href="#work"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:scale-[1.02]"
+              >
+                View Live Work
               </a>
-              <a href="#">
-                <FaGithub />
-              </a>
-              <a href="#">
-                <FaDribbble />
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-8 py-3 text-sm font-semibold text-slate-100 transition hover:border-blue-400 hover:text-blue-300"
+              >
+                Let’s collaborate
               </a>
             </motion.div>
-
+            <motion.div
+              variants={fadeIn("up", "spring", 0.7, 1)}
+              initial="hidden"
+              animate="show"
+              className="mt-10 grid gap-3 sm:grid-cols-4"
+            >
+              {["Next.js", "Laravel", "Python", "Tailwind"].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200"
+                >
+                  {skill}
+                </span>
+              ))}
+            </motion.div>
           </div>
-          {/*img*/}
-          <motion.div
-            variants={fadeIn("down", 0.5)}
-            initial="hidden"
-            whileInView={"show"}
-            className='hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]'>
-            <img className='rounded-3xl' src={logo} alt="" />
-          </motion.div>
-
         </div>
-
       </div>
-
     </section>
-  )
-}
+  );
+};
+
+export default Banner;

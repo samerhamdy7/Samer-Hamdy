@@ -1,100 +1,102 @@
-import React from 'react'
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
 
-//countup//
-import CountUp from 'react-countup';
-
-//intersection observer//
-import { useInView } from 'react-intersection-observer';
-
-//motion//
-import { motion } from 'framer-motion';
-
-//variant//
-import { fadeIn } from '../variants'
-
-//img//
-import logo from '../imgs/samer logo/samer.jpg'
-
-
-export default function About() {
-
+const About = () => {
   const [ref, inView] = useInView({
-    threshold: 0.5
+    threshold: 0.5,
   });
+
   return (
-    <section id='about' className='section mt-10 overflow-hidden p-2' ref={ref} >
-      <div className="container mx-auto">
-        <div className='flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-x-20
-         justify-center items-center '>
-
-
-          {/*img*/}
-
-          <motion.div
-          variants={fadeIn("right", 0.3)}
+    <section id="about" ref={ref} className="py-24 bg-slate-950">
+      <div className="container px-4 mx-auto">
+        <motion.div
+          variants={fadeIn("up", "spring", 0.2, 1)}
           initial="hidden"
-          whileInView={"show"}
-          viewport={{once: false, amount:0.3}}
-           className='bg-about bg-contain bg-no-repeat h-[330px] mix-blend-lighten bg-top '>
-            <img className='rounded-3xl ' width={400} src={logo} />
+          whileInView="show"
+          className="mb-12 text-center"
+        >
+          <p className="text-sm uppercase tracking-[0.35em] text-sky-400">
+            About Me
+          </p>
+          <h2 className="mt-4 text-4xl font-bold text-white md:text-5xl">
+            Fullstack development for legal-tech, marketplaces, and AI services.
+          </h2>
+        </motion.div>
+
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_.9fr]">
+          <motion.div
+            variants={fadeIn("right", "spring", 0.3, 1)}
+            initial="hidden"
+            whileInView="show"
+            className="space-y-6 rounded-[2rem] border border-white/10 bg-slate-900/70 p-8 shadow-2xl shadow-slate-950/30 backdrop-blur-xl"
+          >
+            <p className="text-lg leading-8 text-slate-300">
+              I&apos;m Samer Hamdy, a Full-Stack Web Developer with a legal
+              background. I build dynamic SaaS products and secure Legal-Tech
+              systems using Laravel, Next.js, Python, and modern frontend
+              tooling.
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                "Next.js",
+                "Laravel",
+                "Python",
+                "React",
+                "Tailwind",
+                "MySQL",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="inline-flex items-center justify-center px-4 py-2 text-sm border rounded-full border-white/10 bg-slate-950/50 text-slate-200"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </motion.div>
 
-
-          {/*text*/}
-
           <motion.div
-           variants={fadeIn("left", 0.5)}
-           initial="hidden"
-           whileInView={"show"}
-           viewport={{once: false, amount:0.3}}
-           className='felx-1 mt-40'>
-            <h2 className='h2 text-accent p-1'> About Me </h2>
-            <h3 className='h3 mb-4'>I'm a Freelance Front-end Developer with over 1 year of experience</h3>
-            <p className='mb-6'>Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit.
-              Unde quas facilis, soluta nisi adipisci aliquid.
-              Eum saepe cumque voluptates provident.</p>
-
-
-
-            {/*state*/}
-            <div className='flex gap-x-6 lg:gap-x-10 mb-12'>
-              <div>
-                <div className='text-[40px] font-tertiary text-gradient mb-2'>
-                  {inView ? <CountUp start={0} end={12} duration={2} /> : null}
+            variants={fadeIn("left", "spring", 0.3, 1)}
+            initial="hidden"
+            whileInView="show"
+            className="grid gap-6"
+          >
+            <div className="p-8 glass-card">
+              <h3 className="text-2xl font-semibold text-white">
+                Clean Architecture
+              </h3>
+              <p className="mt-3 text-slate-300">
+                I deliver maintainable SaaS systems with strong security,
+                modular API design, and optimized data workflows.
+              </p>
+            </div>
+            <div className="p-8 glass-card">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-6 text-center">
+                  <div className="text-4xl font-semibold text-sky-400">
+                    {inView ? <CountUp end={20} duration={2} /> : 0}+
+                  </div>
+                  <p className="mt-3 text-sm text-slate-400">
+                    Projects Delivered
+                  </p>
                 </div>
-                <div className='font-primary text-sm tracking-[2px]'>
-                  Months of <br />
-                  Experince
-                </div>
-              </div>
-              <div>
-                <div className='text-[40px] font-tertiary text-gradient mb-2'>
-                  {inView ? <CountUp start={0} end={11} duration={2} /> : null}
-                </div>
-                <div className='font-primary text-sm tracking-[2px]'>
-                  Projects <br />
-                  Completed
-                </div>
-              </div>
-              <div>
-                <div className='text-[40px] font-tertiary text-gradient mb-2'>
-                  {inView ? <CountUp start={0} end={9} duration={2} /> : null}
-                </div>
-                <div className='font-primary text-sm tracking-[2px]'>
-                  Satisfied <br />
-                  Clients
+                <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-6 text-center">
+                  <div className="text-4xl font-semibold text-purple-400">
+                    {inView ? <CountUp end={3} duration={2} /> : 0}+
+                  </div>
+                  <p className="mt-3 text-sm text-slate-400">
+                    Years Experience
+                  </p>
                 </div>
               </div>
             </div>
-            <div className='flex gap-x-8 items-center'>
-              <button className='btn btn-lg'>Contact Me</button>
-              <a className='text-gradient btn-link' href="#">My Portofolio</a>
-            </div>
-
           </motion.div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default About;
