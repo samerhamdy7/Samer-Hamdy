@@ -1,20 +1,21 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import workImage from "../imgs/work/work.jpg";
-import digitalImage from "../imgs/work/digital market.jpg";
+import lawyer from "../imgs/work/lawyer.png";
+import auto from "../imgs/work/auto.png";
 
 const Work = () => {
   const projects = [
     {
       title: "SaaS Legal Management System",
-      image: workImage,
+      image: lawyer,
       description:
         "A legal-tech platform with law firm portals, admin dashboards, multi-tenant billing, and document workflows.",
       liveLink: "https://lawyer.adalatech.online",
     },
     {
       title: "Automotive Marketplace Platform",
-      image: digitalImage,
+      image: auto,
       description:
         "A German vehicle marketplace with dynamic listings, admin review flows, secure image uploads, and SEO-first design.",
       liveLink: "https://autokaufendirekt.de",
@@ -31,7 +32,7 @@ const Work = () => {
 
   return (
     <section id="work" className="py-24 bg-slate-950">
-      <div className="container mx-auto px-4">
+      <div className="container px-4 mx-auto">
         <motion.div
           variants={fadeIn("up", "spring", 0.2, 1)}
           initial="hidden"
@@ -58,11 +59,11 @@ const Work = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
+                className="object-cover w-full transition duration-500 h-72 group-hover:scale-110"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/30 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-              <div className="absolute inset-x-0 bottom-0 px-6 pb-8 text-white opacity-0 transition duration-500 group-hover:opacity-100">
+              <div className="absolute inset-0 transition duration-500 opacity-0 bg-gradient-to-t from-slate-950/95 via-slate-950/30 to-transparent group-hover:opacity-100" />
+              <div className="absolute inset-x-0 bottom-0 px-6 pb-8 text-white transition duration-500 opacity-0 group-hover:opacity-100">
                 <h3 className="mb-3 text-2xl font-semibold">{project.title}</h3>
                 <p className="mb-5 text-sm text-slate-300">
                   {project.description}
@@ -77,7 +78,7 @@ const Work = () => {
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  className="inline-flex rounded-full bg-blue-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-400"
+                  className="inline-flex px-5 py-3 text-sm font-semibold text-white transition bg-blue-500 rounded-full hover:bg-blue-400"
                 >
                   {project.buttonLabel || "View Live"}
                 </a>
