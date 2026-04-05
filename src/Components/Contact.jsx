@@ -39,18 +39,18 @@ const Contact = () => {
           </h2>
         </motion.div>
 
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <motion.div
             variants={fadeIn("right", "spring", 0.3, 1)}
             initial="hidden"
             whileInView="show"
-            className="glass-card p-10"
+            className="glass-card p-6 sm:p-8 md:p-10"
           >
-            <h3 className="text-2xl font-semibold text-white mb-4">
+            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">
               Let&apos;s build something reliable.
             </h3>
-            <p className="text-slate-300 leading-7">
-              I’m available for freelance work, product collaborations, and
+            <p className="text-sm sm:text-base text-slate-300 leading-7">
+              I'm available for freelance work, product collaborations, and
               full-time roles. Share your project goals and I&apos;ll reply with
               a practical plan.
             </p>
@@ -85,7 +85,7 @@ const Contact = () => {
             initial="hidden"
             whileInView="show"
             onSubmit={handleSubmit}
-            className="glass-card p-10"
+            className="glass-card p-6 sm:p-8 md:p-10"
           >
             <div className="mb-6">
               <label className="block text-sm font-semibold text-slate-200 mb-2">

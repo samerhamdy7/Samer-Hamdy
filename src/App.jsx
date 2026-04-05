@@ -6,14 +6,12 @@ import Header from "./Components/Header";
 import Nav from "./Components/Nav";
 import Services from "./Components/Services";
 import Work from "./Components/Work";
-import Cursor from "./Components/Cursor";
 import Particles from "./Components/Particles";
 
 function App() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
       <Particles />
-      <Cursor />
       <Header />
       <main className="relative z-10">
         <Banner />

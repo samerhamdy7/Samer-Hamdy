@@ -31,41 +31,43 @@ const Work = () => {
   ];
 
   return (
-    <section id="work" className="py-24 bg-slate-950">
-      <div className="container px-4 mx-auto">
+    <section id="work" className="py-16 sm:py-20 md:py-24 bg-slate-950">
+      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
         <motion.div
           variants={fadeIn("up", "spring", 0.2, 1)}
           initial="hidden"
           whileInView="show"
-          className="mb-12 text-center"
+          className="mb-10 text-center sm:mb-12"
         >
-          <p className="text-sm uppercase tracking-[0.35em] text-sky-400">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-sky-400">
             Featured Work
           </p>
-          <h2 className="mt-4 text-4xl font-bold text-white md:text-5xl">
+          <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Live project showcases.
           </h2>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               variants={fadeIn("up", "spring", 0.3 + index * 0.15, 1)}
               initial="hidden"
               whileInView="show"
-              className="group relative overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-slate-950/40"
+              className="group relative overflow-hidden rounded-xl sm:rounded-2xl md:rounded-[2rem] border border-white/10 shadow-2xl shadow-slate-950/40"
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="object-cover w-full transition duration-500 h-72 group-hover:scale-110"
+                className="object-cover w-full h-48 transition duration-500 sm:h-60 md:h-72 group-hover:scale-110"
                 loading="lazy"
               />
               <div className="absolute inset-0 transition duration-500 opacity-0 bg-gradient-to-t from-slate-950/95 via-slate-950/30 to-transparent group-hover:opacity-100" />
-              <div className="absolute inset-x-0 bottom-0 px-6 pb-8 text-white transition duration-500 opacity-0 group-hover:opacity-100">
-                <h3 className="mb-3 text-2xl font-semibold">{project.title}</h3>
-                <p className="mb-5 text-sm text-slate-300">
+              <div className="absolute inset-x-0 bottom-0 px-4 pb-6 text-white transition duration-500 opacity-0 sm:px-6 sm:pb-8 group-hover:opacity-100">
+                <h3 className="mb-2 text-lg font-semibold sm:mb-3 sm:text-xl md:text-2xl">
+                  {project.title}
+                </h3>
+                <p className="mb-4 text-xs sm:mb-5 sm:text-sm text-slate-300">
                   {project.description}
                 </p>
                 <a
@@ -78,7 +80,7 @@ const Work = () => {
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  className="inline-flex px-5 py-3 text-sm font-semibold text-white transition bg-blue-500 rounded-full hover:bg-blue-400"
+                  className="inline-flex px-4 py-2 text-xs font-semibold text-white transition bg-blue-500 rounded-full sm:px-5 sm:py-3 sm:text-sm hover:bg-blue-400"
                 >
                   {project.buttonLabel || "View Live"}
                 </a>
