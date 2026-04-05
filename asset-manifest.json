@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Samer-Hamdy/static/css/main.2b70589b.css",
-    "main.js": "/Samer-Hamdy/static/js/main.42d1e9a2.js",
+    "main.css": "/Samer-Hamdy/static/css/main.4f8f6a19.css",
+    "main.js": "/Samer-Hamdy/static/js/main.4c4d6d3b.js",
     "static/js/453.e1a4b6e9.chunk.js": "/Samer-Hamdy/static/js/453.e1a4b6e9.chunk.js",
     "static/media/work.jpg": "/Samer-Hamdy/static/media/work.2094d4b67921d030ebde.jpg",
     "static/media/lawyer.png": "/Samer-Hamdy/static/media/lawyer.369835dd3ae47e862a80.png",
     "static/media/auto.png": "/Samer-Hamdy/static/media/auto.301f299720ea7f3879e2.png",
     "index.html": "/Samer-Hamdy/index.html",
-    "main.2b70589b.css.map": "/Samer-Hamdy/static/css/main.2b70589b.css.map",
-    "main.42d1e9a2.js.map": "/Samer-Hamdy/static/js/main.42d1e9a2.js.map",
+    "main.4f8f6a19.css.map": "/Samer-Hamdy/static/css/main.4f8f6a19.css.map",
+    "main.4c4d6d3b.js.map": "/Samer-Hamdy/static/js/main.4c4d6d3b.js.map",
     "453.e1a4b6e9.chunk.js.map": "/Samer-Hamdy/static/js/453.e1a4b6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b70589b.css",
-    "static/js/main.42d1e9a2.js"
+    "static/css/main.4f8f6a19.css",
+    "static/js/main.4c4d6d3b.js"
   ]
 }
