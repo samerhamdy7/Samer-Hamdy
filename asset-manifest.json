@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/Samer-Hamdy/static/css/main.6d9004e7.css",
-    "main.js": "/Samer-Hamdy/static/js/main.8a370811.js",
+    "main.js": "/Samer-Hamdy/static/js/main.c7557d48.js",
     "static/js/453.e1a4b6e9.chunk.js": "/Samer-Hamdy/static/js/453.e1a4b6e9.chunk.js",
     "static/media/work.jpg": "/Samer-Hamdy/static/media/work.2094d4b67921d030ebde.jpg",
-    "static/media/digital market.jpg": "/Samer-Hamdy/static/media/digital market.e1c71c3e1a07004b6ba6.jpg",
+    "static/media/lawyer.png": "/Samer-Hamdy/static/media/lawyer.369835dd3ae47e862a80.png",
+    "static/media/auto.png": "/Samer-Hamdy/static/media/auto.301f299720ea7f3879e2.png",
     "index.html": "/Samer-Hamdy/index.html",
     "main.6d9004e7.css.map": "/Samer-Hamdy/static/css/main.6d9004e7.css.map",
-    "main.8a370811.js.map": "/Samer-Hamdy/static/js/main.8a370811.js.map",
+    "main.c7557d48.js.map": "/Samer-Hamdy/static/js/main.c7557d48.js.map",
     "453.e1a4b6e9.chunk.js.map": "/Samer-Hamdy/static/js/453.e1a4b6e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6d9004e7.css",
-    "static/js/main.8a370811.js"
+    "static/js/main.c7557d48.js"
   ]
 }
